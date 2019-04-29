@@ -1,0 +1,14 @@
+.main-box {
+    max-width: 70ch;
+    padding: 2ch;
+    margin: auto;
+}
+
+button {
+    --mdc-theme-primary: #03DAC5;
+    --mdc-theme-primary-light: #03DAC5;
+    --mdc-theme-primary-dark: #03DAC5;
+    --mdc-theme-secondary: #03DAC5;
+    --mdc-theme-secondary-light: #03DAC5;
+    --mdc-theme-secondary-dark: #03DAC5;
+}
