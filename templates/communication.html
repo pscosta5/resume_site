@@ -1,214 +1,222 @@
 <script type="text/javascript">
-    google.charts.load("current", {packages: ["bar"]});
-    google.charts.setOnLoadCallback(drawChart);
+  google.charts.load("current", { packages: ["bar"] });
+  google.charts.setOnLoadCallback(drawChart);
 
-    function drawChart() {
-        var effectiveData = google.visualization.arrayToDataTable([
-            ["Rating", "Number of votes"],
-            ["Strongly disagree", 0],
-            ["Disagree", 0],
-            ["Neutral", 8],
-            ["Agree", 44],
-            ["Strongly agree", 88]
-        ]);
+  function drawChart() {
+    var effectiveData = google.visualization.arrayToDataTable([
+      ["Rating", "Number of votes"],
+      ["Strongly disagree", 0],
+      ["Disagree", 0],
+      ["Neutral", 8],
+      ["Agree", 44],
+      ["Strongly agree", 88]
+    ]);
 
-        var clarityData = google.visualization.arrayToDataTable([
-            ["Rating", "Number of votes"],
-            ["Strongly disagree", 0],
-            ["Disagree", 0],
-            ["Neutral", 6],
-            ["Agree", 45],
-            ["Strongly agree", 89]
-        ]);
+    var clarityData = google.visualization.arrayToDataTable([
+      ["Rating", "Number of votes"],
+      ["Strongly disagree", 0],
+      ["Disagree", 0],
+      ["Neutral", 6],
+      ["Agree", 45],
+      ["Strongly agree", 89]
+    ]);
 
-        var comprehensionData = google.visualization.arrayToDataTable([
-            ["Rating", "Number of votes"],
-            ["Strongly disagree", 0],
-            ["Disagree", 1],
-            ["Neutral", 10],
-            ["Agree", 33],
-            ["Strongly agree", 96]
-        ]);
+    var comprehensionData = google.visualization.arrayToDataTable([
+      ["Rating", "Number of votes"],
+      ["Strongly disagree", 0],
+      ["Disagree", 1],
+      ["Neutral", 10],
+      ["Agree", 33],
+      ["Strongly agree", 96]
+    ]);
 
-        var questionsData = google.visualization.arrayToDataTable([
-            ["Rating", "Number of votes"],
-            ["Strongly disagree", 0],
-            ["Disagree", 2],
-            ["Neutral", 8],
-            ["Agree", 48],
-            ["Strongly agree", 82]
-        ]);
+    var questionsData = google.visualization.arrayToDataTable([
+      ["Rating", "Number of votes"],
+      ["Strongly disagree", 0],
+      ["Disagree", 2],
+      ["Neutral", 8],
+      ["Agree", 48],
+      ["Strongly agree", 82]
+    ]);
 
-        var availabilityData = google.visualization.arrayToDataTable([
-            ["Rating", "Number of votes"],
-            ["Strongly disagree", 0],
-            ["Disagree", 0],
-            ["Neutral", 7],
-            ["Agree", 34],
-            ["Strongly agree", 99]
-        ]);
+    var availabilityData = google.visualization.arrayToDataTable([
+      ["Rating", "Number of votes"],
+      ["Strongly disagree", 0],
+      ["Disagree", 0],
+      ["Neutral", 7],
+      ["Agree", 34],
+      ["Strongly agree", 99]
+    ]);
 
-        var productivityData = google.visualization.arrayToDataTable([
-            ["Rating", "Number of votes"],
-            ["Strongly disagree", 0],
-            ["Disagree", 3],
-            ["Neutral", 6],
-            ["Agree", 35],
-            ["Strongly agree", 96]
-        ]);
-        var select = document.getElementById("criteria-input");
+    var productivityData = google.visualization.arrayToDataTable([
+      ["Rating", "Number of votes"],
+      ["Strongly disagree", 0],
+      ["Disagree", 3],
+      ["Neutral", 6],
+      ["Agree", 35],
+      ["Strongly agree", 96]
+    ]);
+    var select = document.getElementById("criteria-input");
 
-        var options = {
-            chart: {
-                title: "Instructor was an effective lecturer"
-            },
-            fontSize: 25,
-            colors: "#03DAC5",
-            vAxis: {
-                title: "Number of votes",
-                titleTextStyle: {
-                    fontSize: 13
-                },
-                textStyle: {
-                    fontSize: 13
-                }
-                // gridlines: {
-                //   color: "#442C2E",
-                // },
-            },
-            hAxis: {
-                // Slanted text not supported yet for Material versions
-                // slantedText: true,
-                // slantedTextAngle: 45,
-                titleTextStyle: {
-                    fontSize: 13
-                },
-                textStyle: {
-                    fontSize: 13
-                }
-            },
-            legend: {
-                position: "none"
-            }
-        };
-
-        var chart = new google.charts.Bar(
-            document.getElementById("columnchart_material")
-        );
-
-        chart.draw(effectiveData, google.charts.Bar.convertOptions(options));
-
-        select.onchange = function (e) {
-            if (e.target.value === "effectiveness") {
-                options.chart.title = "Instructor was an effective lecturer";
-                chart.draw(effectiveData, google.charts.Bar.convertOptions(options));
-            }
-            if (e.target.value === "clarity") {
-                options.chart.title = "Instructor presented the subject matter clearly";
-                chart.draw(clarityData, google.charts.Bar.convertOptions(options));
-            }
-            if (e.target.value === "comprehension") {
-                options.chart.title =
-                    "Lectures I attended helped me understand the content";
-                chart.draw(
-                    comprehensionData,
-                    google.charts.Bar.convertOptions(options)
-                );
-            }
-            if (e.target.value === "questions") {
-                options.chart.title =
-                    "Instructor answered questions clearly and effectively";
-                chart.draw(questionsData, google.charts.Bar.convertOptions(options));
-            }
-            if (e.target.value === "availability") {
-                options.chart.title = "Instructor was available and helpful";
-                chart.draw(availabilityData, google.charts.Bar.convertOptions(options));
-            }
-            if (e.target.value === "productivity") {
-                options.chart.title =
-                    "Instructor effectively used time during class periods";
-                chart.draw(productivityData, google.charts.Bar.convertOptions(options));
-            }
+    var options = {
+      chart: {
+        title: "Instructor was an effective lecturer"
+      },
+      fontSize: 25,
+      colors: "#03DAC5",
+      vAxis: {
+        title: "Number of votes",
+        titleTextStyle: {
+          fontSize: 13
+        },
+        textStyle: {
+          fontSize: 13
+        }
+        // gridlines: {
+        //   color: "#442C2E",
+        // },
+      },
+      hAxis: {
+        // Slanted text not supported yet for Material versions
+        // slantedText: true,
+        // slantedTextAngle: 45,
+        titleTextStyle: {
+          fontSize: 13
+        },
+        textStyle: {
+          fontSize: 13
+        }
+      },
+      legend: {
+        position: "none"
+      }
     };
-    }
+
+    var chart = new google.charts.Bar(
+      document.getElementById("columnchart_material")
+    );
+
+    chart.draw(effectiveData, google.charts.Bar.convertOptions(options));
+
+    select.onchange = function(e) {
+      if (e.target.value === "effectiveness") {
+        options.chart.title = "Instructor was an effective lecturer";
+        chart.draw(effectiveData, google.charts.Bar.convertOptions(options));
+      }
+      if (e.target.value === "clarity") {
+        options.chart.title = "Instructor presented the subject matter clearly";
+        chart.draw(clarityData, google.charts.Bar.convertOptions(options));
+      }
+      if (e.target.value === "comprehension") {
+        options.chart.title =
+          "Lectures I attended helped me understand the content";
+        chart.draw(
+          comprehensionData,
+          google.charts.Bar.convertOptions(options)
+        );
+      }
+      if (e.target.value === "questions") {
+        options.chart.title =
+          "Instructor answered questions clearly and effectively";
+        chart.draw(questionsData, google.charts.Bar.convertOptions(options));
+      }
+      if (e.target.value === "availability") {
+        options.chart.title = "Instructor was available and helpful";
+        chart.draw(availabilityData, google.charts.Bar.convertOptions(options));
+      }
+      if (e.target.value === "productivity") {
+        options.chart.title =
+          "Instructor effectively used time during class periods";
+        chart.draw(productivityData, google.charts.Bar.convertOptions(options));
+      }
+    };
+  }
 </script>
 <h4 class="mdc-typography--headline4">Teaching evaluations</h4>
 <p class="mdc-typography--body1">
-    Before I became a Data Scientist, I worked as a scholar at California State
-    University San Bernardino. There I led research groups and taught physics
-    courses to undergraduates—one of the toughest audiences around. I was
-    fortunate enough to receive stellar evaluations form my classes.
+  Before I became a Data Scientist, I worked as a scholar at California State
+  University San Bernardino. There I led research groups and taught physics
+  courses to undergraduates—one of the toughest audiences around. I was
+  fortunate enough to receive stellar evaluations form my classes.
 </p>
 <div
-        class="mdc-select mdc-select--outlined"
-        style="--mdc-theme-primary: #03DAC5; margin-bottom: 20px"
+  class="mdc-select mdc-select--outlined"
+  style="--mdc-theme-primary: #03DAC5; margin-bottom: 20px"
 >
-    {# <i class="mdc-select__dropdown-icon"></i>#}
-    <select class="mdc-select__native-control" id="criteria-input">
-        <option value="effectiveness" selected>Effectiveness</option>
-        <option value="clarity">Clarity</option>
-        <option value="comprehension">Comprehension</option>
-        <option value="questions">Questions</option>
-        <option value="availability">Availability</option>
-        <option value="productivity">Productivity</option>
-    </select>
-    <div class="mdc-notched-outline">
-        <div class="mdc-notched-outline__leading"></div>
-        <div class="mdc-notched-outline__notch">
-            <label class="mdc-floating-label" style="color: #03DAC5;">Criteria</label>
-        </div>
-        <div class="mdc-notched-outline__trailing"></div>
+  {# <i class="mdc-select__dropdown-icon"></i>#}
+  <select class="mdc-select__native-control" id="criteria-input">
+    <option value="effectiveness" selected>Effectiveness</option>
+    <option value="clarity">Clarity</option>
+    <option value="comprehension">Comprehension</option>
+    <option value="questions">Questions</option>
+    <option value="availability">Availability</option>
+    <option value="productivity">Productivity</option>
+  </select>
+  <div class="mdc-notched-outline">
+    <div class="mdc-notched-outline__leading"></div>
+    <div class="mdc-notched-outline__notch">
+      <label class="mdc-floating-label" style="color: #03DAC5;">Criteria</label>
     </div>
+    <div class="mdc-notched-outline__trailing"></div>
+  </div>
 </div>
 <div id="columnchart_material" style="width: 100%; height: 500px;"></div>
 <h6 class="mdc-typography--headline6">Selected student comments</h6>
 <p class="mdc-typography--body1">
-    “I felt like his lectures were extremely straight-forward and covered the
-    material perfectly.”
+  “I felt like his lectures were extremely straight-forward and covered the
+  material perfectly.”
 </p>
 <p class="mdc-typography--body1">
-    “I liked how welcoming it felt, since physics is hard to understand, making
-    the content fun at the same time made things easier to understand.”
+  “I liked how welcoming it felt, since physics is hard to understand, making
+  the content fun at the same time made things easier to understand.”
 </p>
 <p class="mdc-typography--body1">
-    “...sessions with Paulo probably helped my grade more than anything in the
-    class because, once again, he made problems easy to solve by giving us problem
-    solving methods which apply to each type of that problem. We covered easy
-    problems and difficult problems, and he was always patient in answering any
-    questions that students had.”
+  “...sessions with Paulo probably helped my grade more than anything in the
+  class because, once again, he made problems easy to solve by giving us problem
+  solving methods which apply to each type of that problem. We covered easy
+  problems and difficult problems, and he was always patient in answering any
+  questions that students had.”
 </p>
 <h4 class="mdc-typography--headline4">Science blogs</h4>
 <p class="mdc-typography--body1">
-    I was heavily involved in outreach efforts as a researcher at the Center for
-    Materials and Nanoscience. In addition to giving talks and demos, I wrote some
-    blogs explaining research techniques to the general public. I rehosted one of
-    these blogs on Medium. It explains how we take pictures of atomic structures!
+  I was heavily involved in outreach efforts as a researcher at the Center for
+  Materials and Nanoscience. In addition to giving talks and demos, I wrote some
+  blogs explaining research techniques to the general public. I rehosted one of
+  these blogs on Medium. It explains how we take pictures of atomic structures!
 </p>
-<div class="mdc-card mdc-elevation--z8">
-    <a
-            href="https://medium.com/@pauloscosta5/scanning-tunneling-microscopy-f625b8340409"
-    >
-        <img src="{{ url_for("static", filename="medium_preview.PNG") }}"
-             alt="Medium article preview" style="width: 100%;">
-    </a>
+<div
+  class="mdc-card mdc-elevation--z8 mdc-ripple-surface mdc-ripple-surface--primary"
+  style="--mdc-theme-primary: #03DAC5;"
+>
+  <a
+    href="https://medium.com/@pauloscosta5/scanning-tunneling-microscopy-f625b8340409"
+  >
+    <img src="{{ url_for("static", filename="medium_preview.PNG") }}"
+    alt="Medium article preview" style="width: 100%;">
+  </a>
+  <script>
+    mdc.ripple.MDCRipple.attachTo(
+      document.querySelector(".mdc-ripple-surface")
+    );
+  </script>
 </div>
 <h4 class="mdc-typography--headline4">Educational videos</h4>
 <p class="mdc-typography--body1">
-    While I was a graduate researcher at UNL, our lab worked to create some
-    educational videos to explain to the public the kind of research we do at the
-    Center for Materials and Nanoscience.
+  While I was a graduate researcher at UNL, our lab worked to create some
+  educational videos to explain to the public the kind of research we do at the
+  Center for Materials and Nanoscience.
 </p>
 <div id="youtube">
-    <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/_Vahr6LPFpI?color=white"
-            frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-            style="display: block; margin: auto;"
-    ></iframe>
+  <iframe
+    width="560"
+    height="315"
+    src="https://www.youtube.com/embed/_Vahr6LPFpI?color=white"
+    frameborder="0"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+    style="display: block; margin: auto;"
+  ></iframe>
 </div>
 <script>
-    mdc.select.MDCSelect.attachTo(document.querySelector(".mdc-select"));
+  mdc.select.MDCSelect.attachTo(document.querySelector(".mdc-select"));
 </script>
