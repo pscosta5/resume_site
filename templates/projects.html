@@ -7,23 +7,28 @@
   style="--mdc-theme-primary: #03dac5;"
 >
   <a href="https://grocery-paulo.herokuapp.com/">
-    <img src="{{ url_for("static", filename="GROCERY.png") }}" alt="GROCERY screenshot"
-    style="width: 100%; height: 100%">
+    <img
+      src="{{ url_for('static', filename='GROCERY.png') }}"
+      alt="GROCERY screenshot"
+      style="width: 100%; height: 100%;"
+    />
   </a>
   <script>
-    mdc.ripple.MDCRipple.attachTo(document.querySelector(".GROCERY-screenshot"));
+    mdc.ripple.MDCRipple.attachTo(
+      document.querySelector(".GROCERY-screenshot")
+    );
   </script>
 </div>
 <p class="mdc-typography--caption">
   The site is hosted on Heroku, so it will take a minute to load.
 </p>
 <p class="mdc-typography--body1">
-  At The Data Incubator, I analyzed over 3 million orders from Instacart—a grocery
-  delivery service. Using this data I was able to make a recommendation system that
-  would predict the groceries people will buy. The model compares a user’s order history
-  to that of all other customers in the database using tf–idf. The model then predicts
-  what a user will order based on the purchase history of customers most similar to the
-  user.
+  At The Data Incubator, I analyzed over 3 million orders from Instacart—a
+  grocery delivery service. Using this data I was able to make a recommendation
+  system that would predict the groceries people will buy. The model compares a
+  user’s order history to that of all other customers in the database using
+  tf–idf. The model then predicts what a user will order based on the purchase
+  history of customers most similar to the user.
 </p>
 <div id="youtube">
   <iframe
@@ -37,12 +42,13 @@
   ></iframe>
 </div>
 <p class="mdc-typography--body1">
-  In addition to predicting orders using my model, I was also able to produce some
-  interesting insights into people’s purchase habits. For example, there are some clear
-  correlations between the time of the day and the type of foods that are bought. Did
-  you know that cake reaches it’s peak consumption at 2:00 am? Click on the picture up
-  top to visit the GROCERY website, then click the insights tab to learn other
-  interesting trends about how people buy their food.
+  In addition to predicting orders using my model, I was also able to produce
+  some interesting insights into people’s purchase habits. For example, there
+  are some clear correlations between the time of the day and the type of foods
+  that are bought. Did you know that cake reaches it’s peak consumption at 2:00
+  am? Click on the picture up top to visit the GROCERY website, then click the
+  insights tab to learn other interesting trends about how people buy their
+  food.
 </p>
 <h4 class="mdc-typography--headline4">Miscellaneous projects</h4>
 <div
@@ -50,15 +56,21 @@
   style="--mdc-theme-primary: #03dac5;"
 >
   <a href="https://github.com/pscosta5/Personal-data-science-projects">
-    <img src="{{ url_for("static", filename="other_projects.png") }}" alt="Projects
-    screenshot" style="width: 100%; height: 100%">
+    <img
+      src="{{ url_for('static', filename='other_projects.png') }}"
+      alt="Projects screenshot"
+      style="width: 100%; height: 100%;"
+    />
   </a>
   <script>
-    mdc.ripple.MDCRipple.attachTo(document.querySelector(".other-projects-screenshot"));
+    mdc.ripple.MDCRipple.attachTo(
+      document.querySelector(".other-projects-screenshot")
+    );
   </script>
 </div>
 <p class="mdc-typography--body1">
-  I have various other personal data science projects such as creating SQL databases out
-  of baseball game data, studying gender gaps and earnings based on college degrees, and
-  predicting car market prices based on vehicle features using k-NN algorithms.
+  I have various other personal data science projects such as creating SQL
+  databases out of baseball game data, studying gender gaps and earnings based
+  on college degrees, and predicting car market prices based on vehicle features
+  using k-NN algorithms.
 </p>
