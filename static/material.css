@@ -4,6 +4,11 @@
   margin: auto;
 }
 
+.mdc-select {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
 button {
   --mdc-theme-primary: #03dac5;
   --mdc-theme-primary-light: #03dac5;

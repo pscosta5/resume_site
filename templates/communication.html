@@ -56,8 +56,6 @@
       ["Agree", 35],
       ["Strongly agree", 96],
     ]);
-    var select = document.getElementById("criteria-input");
-
     var options = {
       chart: {
         title: "Instructor was an effective lecturer",
@@ -95,19 +93,21 @@
     var chart = new google.charts.Bar(
       document.getElementById("columnchart_material")
     );
-
     chart.draw(effectiveData, google.charts.Bar.convertOptions(options));
 
-    select.onchange = function (e) {
-      if (e.target.value === "effectiveness") {
+    const select = new mdc.select.MDCSelect(
+      document.querySelector(".mdc-select")
+    );
+    select.listen("MDCSelect:change", () => {
+      if (select.value === "effectiveness") {
         options.chart.title = "Instructor was an effective lecturer";
         chart.draw(effectiveData, google.charts.Bar.convertOptions(options));
       }
-      if (e.target.value === "clarity") {
+      if (select.value === "clarity") {
         options.chart.title = "Instructor presented the subject matter clearly";
         chart.draw(clarityData, google.charts.Bar.convertOptions(options));
       }
-      if (e.target.value === "comprehension") {
+      if (select.value === "comprehension") {
         options.chart.title =
           "Lectures I attended helped me understand the content";
         chart.draw(
@@ -115,21 +115,21 @@
           google.charts.Bar.convertOptions(options)
         );
       }
-      if (e.target.value === "questions") {
+      if (select.value === "questions") {
         options.chart.title =
           "Instructor answered questions clearly and effectively";
         chart.draw(questionsData, google.charts.Bar.convertOptions(options));
       }
-      if (e.target.value === "availability") {
+      if (select.value === "availability") {
         options.chart.title = "Instructor was available and helpful";
         chart.draw(availabilityData, google.charts.Bar.convertOptions(options));
       }
-      if (e.target.value === "productivity") {
+      if (select.value === "productivity") {
         options.chart.title =
           "Instructor effectively used time during class periods";
         chart.draw(productivityData, google.charts.Bar.convertOptions(options));
       }
-    };
+    });
   }
 </script>
 <h4 class="mdc-typography--headline4">Teaching evaluations</h4>
@@ -139,25 +139,39 @@
   courses to undergraduates—one of the toughest audiences around. I was
   fortunate enough to receive stellar evaluations form my classes.
 </p>
-<div
-  class="mdc-select mdc-select--outlined"
-  style="--mdc-theme-primary: #03dac5; margin-bottom: 20px;"
->
-  {# <i class="mdc-select__dropdown-icon"></i>#}
-  <select class="mdc-select__native-control" id="criteria-input">
-    <option value="effectiveness" selected>Effectiveness</option>
-    <option value="clarity">Clarity</option>
-    <option value="comprehension">Comprehension</option>
-    <option value="questions">Questions</option>
-    <option value="availability">Availability</option>
-    <option value="productivity">Productivity</option>
-  </select>
-  <div class="mdc-notched-outline">
-    <div class="mdc-notched-outline__leading"></div>
-    <div class="mdc-notched-outline__notch">
-      <label class="mdc-floating-label" style="color: #03dac5;">Criteria</label>
-    </div>
-    <div class="mdc-notched-outline__trailing"></div>
+<div class="mdc-select">
+  <div class="mdc-select__anchor demo-width-class">
+    <i class="mdc-select__dropdown-icon"></i>
+    <div class="mdc-select__selected-text">Effectiveness</div>
+    <span class="mdc-floating-label">Criteria</span>
+    <div class="mdc-line-ripple"></div>
+  </div>
+
+  <div class="mdc-select__menu mdc-menu mdc-menu-surface demo-width-class">
+    <ul class="mdc-list">
+      <li
+        class="mdc-list-item mdc-list-item--selected"
+        data-value="effectiveness"
+        aria-selected="true"
+      >
+        Effectiveness
+      </li>
+      <li class="mdc-list-item" data-value="clarity">
+        Clarity
+      </li>
+      <li class="mdc-list-item" data-value="comprehension">
+        Comprehension
+      </li>
+      <li class="mdc-list-item" data-value="questions">
+        Questions
+      </li>
+      <li class="mdc-list-item" data-value="availability">
+        Availability
+      </li>
+      <li class="mdc-list-item" data-value="productivity">
+        Productivity
+      </li>
+    </ul>
   </div>
 </div>
 <div id="columnchart_material" style="width: 100%; height: 500px;"></div>
