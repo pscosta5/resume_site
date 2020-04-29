@@ -9,11 +9,16 @@
   margin-bottom: 15px;
 }
 
-button {
+.icon-links {
+  color: #03dac5;
+  text-decoration: none;
+  padding: 5px;
+}
+/* button {
   --mdc-theme-primary: #03dac5;
   --mdc-theme-primary-light: #03dac5;
   --mdc-theme-primary-dark: #03dac5;
   --mdc-theme-secondary: #03dac5;
   --mdc-theme-secondary-light: #03dac5;
   --mdc-theme-secondary-dark: #03dac5;
-}
+} */
