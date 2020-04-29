@@ -153,27 +153,23 @@
       </div>
     </div>
     <div id="block">
-      <div style="float: right; color: white;">
+      <div class="profile">
         <img
+          class="profile-picture"
           src="{{ url_for('static', filename='profile.png') }}"
           alt="Profile picture"
-          style="width: 100%; border: 1px;"
         />
         <br />
         <br />
-        <div id="Links" style="text-align: center;">
-          <a
-            href="https://forms.gle/yn8wtGE5uNcCrLj47"
-            style="color: #03dac5; text-decoration: none; padding: 5px;"
-          >
+        <div class="icon-row" id="Links">
+          <a class="icon-link" href="https://forms.gle/yn8wtGE5uNcCrLj47">
             <span class="material-icons">email</span>
           </a>
           <a
+            class="icon-link"
             href="https://www.linkedin.com/in/paulo-s-costa/"
-            style="color: #03dac5; text-decoration: none; padding: 5px;"
           >
             <svg
-              style="fill: #03dac5;"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"
@@ -184,12 +180,8 @@
               />
             </svg>
           </a>
-          <a
-            href="https://github.com/pscosta5"
-            style="color: #03dac5; text-decoration: none; padding: 5px;"
-          >
+          <a class="icon-link" href="https://github.com/pscosta5">
             <svg
-              style="fill: #03dac5;"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"
